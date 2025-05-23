@@ -1,0 +1,82 @@
+<PROJECT_TREE>
+app/
+  build/
+    helper/
+    templates/
+    unit_tests/
+  generated/
+    nidcpower/
+    nidigital/
+    nidmm/
+    nifake/
+    nifgen/
+    nimodinst/
+    nirfsg/
+    niscope/
+    nise/
+    niswitch/
+    nitclk/
+  src/
+    nidcpower/
+    nidigital/
+    nidmm/
+    nifake/
+    nifgen/
+    nimodinst/
+    nirfsg/
+    niscope/
+    nise/
+    niswitch/
+    nitclk/
+    shared/
+    shared_protos/
+  docs/
+    _static/
+    nidcpower/
+    nidigital/
+    nidmm/
+    nifgen/
+    nimodinst/
+    nirfsg/
+    niscope/
+    nise/
+    niswitch/
+    nitclk/
+  tools/
+</PROJECT_TREE>
+
+<LANGUAGE_DETECTED>
+Python (.py), Mako templates (.mako), Makefile (.mak, Makefile), ReStructuredText (.rst), Markdown (.md), JSON (.json), YAML (.yml/.yaml), Protocol Buffers (.proto), Shell script (.sh), CSS (.css), binary pattern files (.digipat, .digiproj, .digilevels, .digitiming, .tdms, .pinmap, .digicapture), JPEG (.jpg), text snippets (.inc), ini files (.ini).
+</LANGUAGE_DETECTED>
+
+<DEPENDENCY_FILES>
+- app/docs/requirements.txt (usa "sphinx_rtd_theme")
+- app/tox.ini
+- app/tox-travis.ini
+- app/generated/*/setup.py (dependencias como hightime, nitclk, grpcio, protobuf)
+</DEPENDENCY_FILES>
+
+<BUILD_RUN_SCRIPTS>
+- app/build.sh (ejecuta "make clean" y luego "make")
+- app/Makefile y archivos *.mak en build/ y src/*/
+- app/tox.ini define comandos para pruebas, generación de código y empaquetado
+</BUILD_RUN_SCRIPTS>
+
+<README_INSTALL>
+Sección de instalación en README.rst:
+"Driver specific installation instructions can be found on Read the Docs" con enlaces a cada paquete (líneas 524-540 del README).
+</README_INSTALL>
+
+<ENV_VARS>
+- VIRTUAL_ENV (se verifica en varios __init__.py generados para determinar si se está usando un entorno virtual)
+</ENV_VARS>
+
+<PORTS_SERVICES>
+Puertos definidos en los archivos grpc_server_config.json:
+- nidcpower: 31760
+- nidigital: 31761
+- nidmm: 31762
+- nifgen: 31763
+- niscope: 31764
+- niswitch: 31765
+</PORTS_SERVICES>
