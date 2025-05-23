@@ -8,7 +8,7 @@ set -e
 ###############################################
 # Install project dependencies
 python -m pip install --upgrade pip
-python -m pip install mako packaging grpcio-tools==1.59.0 build pytest pytest-timeout coverage numpy hightime grpcio==1.67.0 protobuf==5.27.2
+python -m pip install mako packaging grpcio-tools==1.59.0 build pytest pytest-timeout coverage numpy hightime grpcio==1.67.0 "protobuf>=4.21.6,<5.0"
 
 ###############################################
 # BUILD
