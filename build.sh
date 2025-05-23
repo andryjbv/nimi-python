@@ -3,20 +3,16 @@
 cd /app
 set -e
 
-# COMPLETE THE FOLLOWING SECTIONS
 ###############################################
 # PROJECT DEPENDENCIES AND CONFIGURATION
 ###############################################
-# TODO: Install project dependencies if needed based on relevant config/lock files in the repo.
-# Note that we are developing the project, even if dependencies have been installed before, we need to install again to accommodate the changes we made.
-# <dependency-installation-commands>
-# TODO: Configure project and environment variables
-# <config-commands>
+# Install project dependencies
+python -m pip install --upgrade pip
+python -m pip install mako packaging grpcio-tools==1.59.0 build pytest pytest-timeout coverage numpy hightime grpcio==1.67.0 protobuf==5.27.2
 
 ###############################################
 # BUILD
 ###############################################
 echo "================= 0909 BUILD START 0909 ================="
-# TODO: Build the project if needed. Note that we are developing the project and making changes to it, even if it has been build before, we need to build it again.
-# <build-commands>
+./build.sh
 echo "================= 0909 BUILD END 0909 ================="
