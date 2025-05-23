@@ -6,18 +6,22 @@ set -e
 # Replace this with your command to run all tests
 run_all_tests() {
   echo "Running all tests..."
-  # Example: pytest tests/
-  # TODO: Replace with your command to run all tests
-  # Your command here
+  cd /app
+  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  set +e
+  pytest -vv generated || true
+  set -e
 }
 
 # Replace this with your command to run specific test files
 run_selected_tests() {
   local test_files=("$@")
   echo "Running selected tests: ${test_files[@]}"
-  # Example: pytest "${test_files[@]}"
-  # TODO: Replace with your command to run specific test files
-  # <Your command here>
+  cd /app
+  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  set +e
+  pytest -vv "${test_files[@]}" || true
+  set -e
 }
 # --- END CONFIGURATION SECTION ---
 

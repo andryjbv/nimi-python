@@ -64,7 +64,40 @@ def parse_test_output(stdout_content: str, stderr_content: str) -> List[TestResu
         - Use regular expressions or string parsing to extract test results
         - Create TestResult objects for each test found
     """
-    raise NotImplementedError('Implement the test output parsing logic')
+    import re
+
+    results: List[TestResult] = []
+
+    combined_lines = stdout_content.splitlines() + stderr_content.splitlines()
+
+    status_map = {
+        'PASSED': TestStatus.PASSED,
+        'FAILED': TestStatus.FAILED,
+        'SKIPPED': TestStatus.SKIPPED,
+        'ERROR': TestStatus.ERROR,
+    }
+
+    for line in combined_lines:
+        if '::' not in line:
+            continue
+
+        # pattern: path::test_name ... STATUS [optional]
+        match = re.search(r'(\S+::\S+).*\s+(PASSED|FAILED|SKIPPED|ERROR)', line)
+        if not match:
+            # alternate pattern: STATUS path::test
+            match = re.search(r'(PASSED|FAILED|SKIPPED|ERROR)\s+(\S+::\S+)', line)
+            if match:
+                status_str, name = match.group(1), match.group(2)
+            else:
+                continue
+        else:
+            name, status_str = match.group(1), match.group(2)
+
+        status_enum = status_map.get(status_str)
+        if status_enum:
+            results.append(TestResult(name=name, status=status_enum))
+
+    return results
 
 
 ### Implement the parsing logic above ###
