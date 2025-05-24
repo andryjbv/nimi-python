@@ -7,7 +7,12 @@ set -e
 run_all_tests() {
   echo "Running all tests..."
   cd /app
-  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  drivers=(nifake nidcpower nidigital nidmm nifgen nirfsg niscope niswitch nise nimodinst nitclk)
+  for driver in "${drivers[@]}"; do
+    python tools/install_local_wheel.py --driver "$driver" >/dev/null 2>&1 || true
+    PYTHONPATH="/app/generated/$driver:${PYTHONPATH}"
+  done
+  export PYTHONPATH
   set +e
   pytest -vv generated/*/*/unit_tests || true
   set -e
@@ -18,7 +23,12 @@ run_selected_tests() {
   local test_files=("$@")
   echo "Running selected tests: ${test_files[@]}"
   cd /app
-  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  drivers=(nifake nidcpower nidigital nidmm nifgen nirfsg niscope niswitch nise nimodinst nitclk)
+  for driver in "${drivers[@]}"; do
+    python tools/install_local_wheel.py --driver "$driver" >/dev/null 2>&1 || true
+    PYTHONPATH="/app/generated/$driver:${PYTHONPATH}"
+  done
+  export PYTHONPATH
   set +e
   pytest -vv "${test_files[@]}" || true
   set -e
