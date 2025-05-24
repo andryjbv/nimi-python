@@ -7,7 +7,10 @@ set -e
 run_all_tests() {
   echo "Running all tests..."
   cd /app
-  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  # Install wheels for all drivers so imports succeed
+  for driver in nifake nidcpower nidigital nidmm nifgen nirfsg niscope niswitch nise nimodinst nitclk; do
+    python tools/install_local_wheel.py --driver "$driver" >/dev/null 2>&1 || true
+  done
   set +e
   pytest -vv generated/*/*/unit_tests || true
   set -e
@@ -18,7 +21,9 @@ run_selected_tests() {
   local test_files=("$@")
   echo "Running selected tests: ${test_files[@]}"
   cd /app
-  python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
+  for driver in nifake nidcpower nidigital nidmm nifgen nirfsg niscope niswitch nise nimodinst nitclk; do
+    python tools/install_local_wheel.py --driver "$driver" >/dev/null 2>&1 || true
+  done
   set +e
   pytest -vv "${test_files[@]}" || true
   set -e
