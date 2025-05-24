@@ -9,7 +9,7 @@ run_all_tests() {
   cd /app
   python tools/install_local_wheel.py --driver nitclk >/dev/null 2>&1 || true
   set +e
-  pytest -vv generated || true
+  pytest -vv generated/ || true
   set -e
 }
 
