@@ -5,122 +5,1193 @@ cachedir: .pytest_cache
 rootdir: /app
 configfile: tox.ini
 plugins: timeout-2.4.0
-collecting ... collected 7 items
-INTERNALERROR> Traceback (most recent call last):
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 283, in wrap_session
-INTERNALERROR>     session.exitstatus = doit(config, session) or 0
-INTERNALERROR>                          ^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 336, in _main
-INTERNALERROR>     config.hook.pytest_collection(session=session)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
-INTERNALERROR>     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
-INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
-INTERNALERROR>     raise exception
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-INTERNALERROR>     teardown.throw(exception)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/logging.py", line 790, in pytest_collection
-INTERNALERROR>     return (yield)
-INTERNALERROR>             ^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-INTERNALERROR>     teardown.throw(exception)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/warnings.py", line 121, in pytest_collection
-INTERNALERROR>     return (yield)
-INTERNALERROR>             ^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-INTERNALERROR>     teardown.throw(exception)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/config/__init__.py", line 1417, in pytest_collection
-INTERNALERROR>     return (yield)
-INTERNALERROR>             ^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
-INTERNALERROR>     res = hook_impl.function(*args)
-INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 347, in pytest_collection
-INTERNALERROR>     session.perform_collect()
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 809, in perform_collect
-INTERNALERROR>     self.items.extend(self.genitems(node))
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 975, in genitems
-INTERNALERROR>     yield from self.genitems(subnode)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 975, in genitems
-INTERNALERROR>     yield from self.genitems(subnode)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 970, in genitems
-INTERNALERROR>     rep, duplicate = self._collect_one_node(node, handle_dupes)
-INTERNALERROR>                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/main.py", line 835, in _collect_one_node
-INTERNALERROR>     rep = collect_one_node(node)
-INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/runner.py", line 567, in collect_one_node
-INTERNALERROR>     rep: CollectReport = ihook.pytest_make_collect_report(collector=collector)
-INTERNALERROR>                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_hooks.py", line 512, in __call__
-INTERNALERROR>     return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_manager.py", line 120, in _hookexec
-INTERNALERROR>     return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 167, in _multicall
-INTERNALERROR>     raise exception
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 139, in _multicall
-INTERNALERROR>     teardown.throw(exception)
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/capture.py", line 878, in pytest_make_collect_report
-INTERNALERROR>     rep = yield
-INTERNALERROR>           ^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/pluggy/_callers.py", line 121, in _multicall
-INTERNALERROR>     res = hook_impl.function(*args)
-INTERNALERROR>           ^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/runner.py", line 391, in pytest_make_collect_report
-INTERNALERROR>     call = CallInfo.from_call(
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/runner.py", line 341, in from_call
-INTERNALERROR>     result: TResult | None = func()
-INTERNALERROR>                              ^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/runner.py", line 389, in collect
-INTERNALERROR>     return list(collector.collect())
-INTERNALERROR>                 ^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/python.py", line 549, in collect
-INTERNALERROR>     self._register_setup_module_fixture()
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/python.py", line 562, in _register_setup_module_fixture
-INTERNALERROR>     self.obj, ("setUpModule", "setup_module")
-INTERNALERROR>     ^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/python.py", line 284, in obj
-INTERNALERROR>     self._obj = obj = self._getobj()
-INTERNALERROR>                       ^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/python.py", line 546, in _getobj
-INTERNALERROR>     return importtestmodule(self.path, self.config)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/python.py", line 493, in importtestmodule
-INTERNALERROR>     mod = import_path(
-INTERNALERROR>           ^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py", line 587, in import_path
-INTERNALERROR>     importlib.import_module(module_name)
-INTERNALERROR>   File "/usr/local/lib/python3.12/importlib/__init__.py", line 90, in import_module
-INTERNALERROR>     return _bootstrap._gcd_import(name[level:], package, level)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
-INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
-INTERNALERROR>   File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
-INTERNALERROR>   File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py", line 185, in exec_module
-INTERNALERROR>     exec(co, module.__dict__)
-INTERNALERROR>   File "/app/generated/nidcpower/setup.py", line 16, in <module>
-INTERNALERROR>     setup(
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/setuptools/__init__.py", line 115, in setup
-INTERNALERROR>     return distutils.core.setup(**attrs)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/setuptools/_distutils/core.py", line 173, in setup
-INTERNALERROR>     ok = dist.parse_command_line()
-INTERNALERROR>          ^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 502, in parse_command_line
-INTERNALERROR>     args = self._parse_command_opts(parser, args)
-INTERNALERROR>            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/setuptools/dist.py", line 1003, in _parse_command_opts
-INTERNALERROR>     nargs = _Distribution._parse_command_opts(self, parser, args)
-INTERNALERROR>             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-INTERNALERROR>   File "/usr/local/lib/python3.12/site-packages/setuptools/_distutils/dist.py", line 554, in _parse_command_opts
-INTERNALERROR>     raise SystemExit(f"invalid command name '{command}'")
-INTERNALERROR> SystemExit: invalid command name 'generated/'
+collecting ... collected 0 items / 62 errors
 
-============================= 3 warnings in 1.00s ==============================
+==================================== ERRORS ====================================
+____ ERROR collecting generated/nidcpower/nidcpower/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nidcpower/nidcpower/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidcpower/nidcpower/unit_tests/_matchers.py:8: in <module>
+    import nidcpower._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidcpower'
+____ ERROR collecting generated/nidcpower/nidcpower/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nidcpower/nidcpower/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidcpower/nidcpower/unit_tests/_matchers.py:8: in <module>
+    import nidcpower._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidcpower'
+_ ERROR collecting generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py __
+ImportError while importing test module '/app/generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py:5: in <module>
+    import nidcpower
+E   ModuleNotFoundError: No module named 'nidcpower'
+_ ERROR collecting generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py __
+ImportError while importing test module '/app/generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py:5: in <module>
+    import nidcpower
+E   ModuleNotFoundError: No module named 'nidcpower'
+____ ERROR collecting generated/nidigital/nidigital/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nidigital/nidigital/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidigital/nidigital/unit_tests/_matchers.py:8: in <module>
+    import nidigital._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidigital'
+____ ERROR collecting generated/nidigital/nidigital/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nidigital/nidigital/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidigital/nidigital/unit_tests/_matchers.py:8: in <module>
+    import nidigital._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidigital'
+__ ERROR collecting generated/nidigital/nidigital/unit_tests/_mock_helper.py ___
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nidigital/nidigital/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__ ERROR collecting generated/nidigital/nidigital/unit_tests/_mock_helper.py ___
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nidigital/nidigital/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_ ERROR collecting generated/nidigital/nidigital/unit_tests/test_nidigital.py __
+ImportError while importing test module '/app/generated/nidigital/nidigital/unit_tests/test_nidigital.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidigital/nidigital/unit_tests/test_nidigital.py:3: in <module>
+    import nidigital
+E   ModuleNotFoundError: No module named 'nidigital'
+_ ERROR collecting generated/nidigital/nidigital/unit_tests/test_nidigital.py __
+ImportError while importing test module '/app/generated/nidigital/nidigital/unit_tests/test_nidigital.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidigital/nidigital/unit_tests/test_nidigital.py:3: in <module>
+    import nidigital
+E   ModuleNotFoundError: No module named 'nidigital'
+________ ERROR collecting generated/nidmm/nidmm/unit_tests/_matchers.py ________
+ImportError while importing test module '/app/generated/nidmm/nidmm/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidmm/nidmm/unit_tests/_matchers.py:8: in <module>
+    import nidmm._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidmm'
+________ ERROR collecting generated/nidmm/nidmm/unit_tests/_matchers.py ________
+ImportError while importing test module '/app/generated/nidmm/nidmm/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nidmm/nidmm/unit_tests/_matchers.py:8: in <module>
+    import nidmm._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nidmm'
+______ ERROR collecting generated/nidmm/nidmm/unit_tests/_mock_helper.py _______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nidmm/nidmm/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______ ERROR collecting generated/nidmm/nidmm/unit_tests/_mock_helper.py _______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nidmm/nidmm/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______ ERROR collecting generated/nifake/nifake/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/_matchers.py:8: in <module>
+    import nifake._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nifake'
+_______ ERROR collecting generated/nifake/nifake/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/_matchers.py:8: in <module>
+    import nifake._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nifake'
+_____ ERROR collecting generated/nifake/nifake/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nifake/nifake/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____ ERROR collecting generated/nifake/nifake/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nifake/nifake/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting generated/nifake/nifake/unit_tests/test_converters.py ____
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_converters.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_converters.py:1: in <module>
+    import nifake._converters as _converters
+E   ModuleNotFoundError: No module named 'nifake'
+____ ERROR collecting generated/nifake/nifake/unit_tests/test_converters.py ____
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_converters.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_converters.py:1: in <module>
+    import nifake._converters as _converters
+E   ModuleNotFoundError: No module named 'nifake'
+_______ ERROR collecting generated/nifake/nifake/unit_tests/test_grpc.py _______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_grpc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_grpc.py:5: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_______ ERROR collecting generated/nifake/nifake/unit_tests/test_grpc.py _______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_grpc.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_grpc.py:5: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_ ERROR collecting generated/nifake/nifake/unit_tests/test_library_interpreter.py _
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_library_interpreter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_library_interpreter.py:4: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_ ERROR collecting generated/nifake/nifake/unit_tests/test_library_interpreter.py _
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_library_interpreter.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_library_interpreter.py:4: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_ ERROR collecting generated/nifake/nifake/unit_tests/test_library_singleton.py _
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_library_singleton.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_library_singleton.py:1: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_ ERROR collecting generated/nifake/nifake/unit_tests/test_library_singleton.py _
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_library_singleton.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_library_singleton.py:1: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_____ ERROR collecting generated/nifake/nifake/unit_tests/test_session.py ______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_session.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_session.py:4: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_____ ERROR collecting generated/nifake/nifake/unit_tests/test_session.py ______
+ImportError while importing test module '/app/generated/nifake/nifake/unit_tests/test_session.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifake/nifake/unit_tests/test_session.py:4: in <module>
+    import nifake
+E   ModuleNotFoundError: No module named 'nifake'
+_______ ERROR collecting generated/nifgen/nifgen/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nifgen/nifgen/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifgen/nifgen/unit_tests/_matchers.py:8: in <module>
+    import nifgen._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nifgen'
+_______ ERROR collecting generated/nifgen/nifgen/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nifgen/nifgen/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nifgen/nifgen/unit_tests/_matchers.py:8: in <module>
+    import nifgen._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nifgen'
+_____ ERROR collecting generated/nifgen/nifgen/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nifgen/nifgen/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____ ERROR collecting generated/nifgen/nifgen/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nifgen/nifgen/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting generated/nimodinst/nimodinst/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nimodinst/nimodinst/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/_matchers.py:8: in <module>
+    import nimodinst._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nimodinst'
+____ ERROR collecting generated/nimodinst/nimodinst/unit_tests/_matchers.py ____
+ImportError while importing test module '/app/generated/nimodinst/nimodinst/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/_matchers.py:8: in <module>
+    import nimodinst._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nimodinst'
+__ ERROR collecting generated/nimodinst/nimodinst/unit_tests/_mock_helper.py ___
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nimodinst/nimodinst/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__ ERROR collecting generated/nimodinst/nimodinst/unit_tests/_mock_helper.py ___
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nimodinst/nimodinst/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+__ ERROR collecting generated/nimodinst/nimodinst/unit_tests/test_modinst.py ___
+ImportError while importing test module '/app/generated/nimodinst/nimodinst/unit_tests/test_modinst.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/test_modinst.py:1: in <module>
+    import _matchers
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/_matchers.py:8: in <module>
+    import nimodinst._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nimodinst'
+__ ERROR collecting generated/nimodinst/nimodinst/unit_tests/test_modinst.py ___
+ImportError while importing test module '/app/generated/nimodinst/nimodinst/unit_tests/test_modinst.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/test_modinst.py:1: in <module>
+    import _matchers
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nimodinst/nimodinst/unit_tests/_matchers.py:8: in <module>
+    import nimodinst._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nimodinst'
+_______ ERROR collecting generated/nirfsg/nirfsg/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nirfsg/nirfsg/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nirfsg/nirfsg/unit_tests/_matchers.py:8: in <module>
+    import nirfsg._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nirfsg'
+_______ ERROR collecting generated/nirfsg/nirfsg/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nirfsg/nirfsg/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nirfsg/nirfsg/unit_tests/_matchers.py:8: in <module>
+    import nirfsg._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nirfsg'
+_____ ERROR collecting generated/nirfsg/nirfsg/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nirfsg/nirfsg/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____ ERROR collecting generated/nirfsg/nirfsg/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nirfsg/nirfsg/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______ ERROR collecting generated/niscope/niscope/unit_tests/_matchers.py ______
+ImportError while importing test module '/app/generated/niscope/niscope/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niscope/niscope/unit_tests/_matchers.py:8: in <module>
+    import niscope._visatype as _visatype
+E   ModuleNotFoundError: No module named 'niscope'
+______ ERROR collecting generated/niscope/niscope/unit_tests/_matchers.py ______
+ImportError while importing test module '/app/generated/niscope/niscope/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niscope/niscope/unit_tests/_matchers.py:8: in <module>
+    import niscope._visatype as _visatype
+E   ModuleNotFoundError: No module named 'niscope'
+____ ERROR collecting generated/niscope/niscope/unit_tests/_mock_helper.py _____
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/niscope/niscope/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting generated/niscope/niscope/unit_tests/_mock_helper.py _____
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/niscope/niscope/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+____ ERROR collecting generated/niscope/niscope/unit_tests/test_niscope.py _____
+ImportError while importing test module '/app/generated/niscope/niscope/unit_tests/test_niscope.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niscope/niscope/unit_tests/test_niscope.py:2: in <module>
+    import niscope.waveform_info
+E   ModuleNotFoundError: No module named 'niscope'
+____ ERROR collecting generated/niscope/niscope/unit_tests/test_niscope.py _____
+ImportError while importing test module '/app/generated/niscope/niscope/unit_tests/test_niscope.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niscope/niscope/unit_tests/test_niscope.py:2: in <module>
+    import niscope.waveform_info
+E   ModuleNotFoundError: No module named 'niscope'
+_________ ERROR collecting generated/nise/nise/unit_tests/_matchers.py _________
+ImportError while importing test module '/app/generated/nise/nise/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nise/nise/unit_tests/_matchers.py:8: in <module>
+    import nise._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nise'
+_________ ERROR collecting generated/nise/nise/unit_tests/_matchers.py _________
+ImportError while importing test module '/app/generated/nise/nise/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nise/nise/unit_tests/_matchers.py:8: in <module>
+    import nise._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nise'
+_______ ERROR collecting generated/nise/nise/unit_tests/_mock_helper.py ________
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nise/nise/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______ ERROR collecting generated/nise/nise/unit_tests/_mock_helper.py ________
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nise/nise/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____ ERROR collecting generated/niswitch/niswitch/unit_tests/_matchers.py _____
+ImportError while importing test module '/app/generated/niswitch/niswitch/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niswitch/niswitch/unit_tests/_matchers.py:8: in <module>
+    import niswitch._visatype as _visatype
+E   ModuleNotFoundError: No module named 'niswitch'
+_____ ERROR collecting generated/niswitch/niswitch/unit_tests/_matchers.py _____
+ImportError while importing test module '/app/generated/niswitch/niswitch/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/niswitch/niswitch/unit_tests/_matchers.py:8: in <module>
+    import niswitch._visatype as _visatype
+E   ModuleNotFoundError: No module named 'niswitch'
+___ ERROR collecting generated/niswitch/niswitch/unit_tests/_mock_helper.py ____
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/niswitch/niswitch/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+___ ERROR collecting generated/niswitch/niswitch/unit_tests/_mock_helper.py ____
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/niswitch/niswitch/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_______ ERROR collecting generated/nitclk/nitclk/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nitclk/nitclk/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/_matchers.py:8: in <module>
+    import nitclk._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nitclk'
+_______ ERROR collecting generated/nitclk/nitclk/unit_tests/_matchers.py _______
+ImportError while importing test module '/app/generated/nitclk/nitclk/unit_tests/_matchers.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/_matchers.py:8: in <module>
+    import nitclk._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nitclk'
+_____ ERROR collecting generated/nitclk/nitclk/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nitclk/nitclk/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+_____ ERROR collecting generated/nitclk/nitclk/unit_tests/_mock_helper.py ______
+import file mismatch:
+imported module '_mock_helper' has this __file__ attribute:
+  /app/generated/nidcpower/nidcpower/unit_tests/_mock_helper.py
+which is not the same as the test file we want to collect:
+  /app/generated/nitclk/nitclk/unit_tests/_mock_helper.py
+HINT: remove __pycache__ / .pyc files and/or use a unique basename for your test file modules
+______ ERROR collecting generated/nitclk/nitclk/unit_tests/test_nitclk.py ______
+ImportError while importing test module '/app/generated/nitclk/nitclk/unit_tests/test_nitclk.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/test_nitclk.py:1: in <module>
+    import _matchers
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/_matchers.py:8: in <module>
+    import nitclk._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nitclk'
+______ ERROR collecting generated/nitclk/nitclk/unit_tests/test_nitclk.py ______
+ImportError while importing test module '/app/generated/nitclk/nitclk/unit_tests/test_nitclk.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+/usr/local/lib/python3.12/site-packages/_pytest/python.py:493: in importtestmodule
+    mod = import_path(
+/usr/local/lib/python3.12/site-packages/_pytest/pathlib.py:587: in import_path
+    importlib.import_module(module_name)
+/usr/local/lib/python3.12/importlib/__init__.py:90: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1387: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1360: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1331: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:935: in _load_unlocked
+    ???
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/test_nitclk.py:1: in <module>
+    import _matchers
+/usr/local/lib/python3.12/site-packages/_pytest/assertion/rewrite.py:185: in exec_module
+    exec(co, module.__dict__)
+generated/nitclk/nitclk/unit_tests/_matchers.py:8: in <module>
+    import nitclk._visatype as _visatype
+E   ModuleNotFoundError: No module named 'nitclk'
+=========================== short test summary info ============================
+ERROR generated/nidcpower/nidcpower/unit_tests/_matchers.py
+ERROR generated/nidcpower/nidcpower/unit_tests/_matchers.py
+ERROR generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py
+ERROR generated/nidcpower/nidcpower/unit_tests/test_nidcpower.py
+ERROR generated/nidigital/nidigital/unit_tests/_matchers.py
+ERROR generated/nidigital/nidigital/unit_tests/_matchers.py
+ERROR generated/nidigital/nidigital/unit_tests/_mock_helper.py
+ERROR generated/nidigital/nidigital/unit_tests/_mock_helper.py
+ERROR generated/nidigital/nidigital/unit_tests/test_nidigital.py
+ERROR generated/nidigital/nidigital/unit_tests/test_nidigital.py
+ERROR generated/nidmm/nidmm/unit_tests/_matchers.py
+ERROR generated/nidmm/nidmm/unit_tests/_matchers.py
+ERROR generated/nidmm/nidmm/unit_tests/_mock_helper.py
+ERROR generated/nidmm/nidmm/unit_tests/_mock_helper.py
+ERROR generated/nifake/nifake/unit_tests/_matchers.py
+ERROR generated/nifake/nifake/unit_tests/_matchers.py
+ERROR generated/nifake/nifake/unit_tests/_mock_helper.py
+ERROR generated/nifake/nifake/unit_tests/_mock_helper.py
+ERROR generated/nifake/nifake/unit_tests/test_converters.py
+ERROR generated/nifake/nifake/unit_tests/test_converters.py
+ERROR generated/nifake/nifake/unit_tests/test_grpc.py
+ERROR generated/nifake/nifake/unit_tests/test_grpc.py
+ERROR generated/nifake/nifake/unit_tests/test_library_interpreter.py
+ERROR generated/nifake/nifake/unit_tests/test_library_interpreter.py
+ERROR generated/nifake/nifake/unit_tests/test_library_singleton.py
+ERROR generated/nifake/nifake/unit_tests/test_library_singleton.py
+ERROR generated/nifake/nifake/unit_tests/test_session.py
+ERROR generated/nifake/nifake/unit_tests/test_session.py
+ERROR generated/nifgen/nifgen/unit_tests/_matchers.py
+ERROR generated/nifgen/nifgen/unit_tests/_matchers.py
+ERROR generated/nifgen/nifgen/unit_tests/_mock_helper.py
+ERROR generated/nifgen/nifgen/unit_tests/_mock_helper.py
+ERROR generated/nimodinst/nimodinst/unit_tests/_matchers.py
+ERROR generated/nimodinst/nimodinst/unit_tests/_matchers.py
+ERROR generated/nimodinst/nimodinst/unit_tests/_mock_helper.py
+ERROR generated/nimodinst/nimodinst/unit_tests/_mock_helper.py
+ERROR generated/nimodinst/nimodinst/unit_tests/test_modinst.py
+ERROR generated/nimodinst/nimodinst/unit_tests/test_modinst.py
+ERROR generated/nirfsg/nirfsg/unit_tests/_matchers.py
+ERROR generated/nirfsg/nirfsg/unit_tests/_matchers.py
+ERROR generated/nirfsg/nirfsg/unit_tests/_mock_helper.py
+ERROR generated/nirfsg/nirfsg/unit_tests/_mock_helper.py
+ERROR generated/niscope/niscope/unit_tests/_matchers.py
+ERROR generated/niscope/niscope/unit_tests/_matchers.py
+ERROR generated/niscope/niscope/unit_tests/_mock_helper.py
+ERROR generated/niscope/niscope/unit_tests/_mock_helper.py
+ERROR generated/niscope/niscope/unit_tests/test_niscope.py
+ERROR generated/niscope/niscope/unit_tests/test_niscope.py
+ERROR generated/nise/nise/unit_tests/_matchers.py
+ERROR generated/nise/nise/unit_tests/_matchers.py
+ERROR generated/nise/nise/unit_tests/_mock_helper.py
+ERROR generated/nise/nise/unit_tests/_mock_helper.py
+ERROR generated/niswitch/niswitch/unit_tests/_matchers.py
+ERROR generated/niswitch/niswitch/unit_tests/_matchers.py
+ERROR generated/niswitch/niswitch/unit_tests/_mock_helper.py
+ERROR generated/niswitch/niswitch/unit_tests/_mock_helper.py
+ERROR generated/nitclk/nitclk/unit_tests/_matchers.py
+ERROR generated/nitclk/nitclk/unit_tests/_matchers.py
+ERROR generated/nitclk/nitclk/unit_tests/_mock_helper.py
+ERROR generated/nitclk/nitclk/unit_tests/_mock_helper.py
+ERROR generated/nitclk/nitclk/unit_tests/test_nitclk.py
+ERROR generated/nitclk/nitclk/unit_tests/test_nitclk.py
+!!!!!!!!!!!!!!!!!!! Interrupted: 62 errors during collection !!!!!!!!!!!!!!!!!!!
+============================== 62 errors in 2.55s ==============================
