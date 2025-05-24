@@ -1194,4 +1194,4 @@ ERROR generated/nitclk/nitclk/unit_tests/_mock_helper.py
 ERROR generated/nitclk/nitclk/unit_tests/test_nitclk.py
 ERROR generated/nitclk/nitclk/unit_tests/test_nitclk.py
 !!!!!!!!!!!!!!!!!!! Interrupted: 62 errors during collection !!!!!!!!!!!!!!!!!!!
-============================== 62 errors in 2.55s ==============================
+============================== 62 errors in 2.52s ==============================
